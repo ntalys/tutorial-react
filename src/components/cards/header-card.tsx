@@ -12,7 +12,7 @@ export function HeaderCard({
   return (
     <div className="flex flex-col w-full h-full justify-center px-8">
       <div className="flex justify-between">
-        <p>props.title: {title}</p>
+        <p className="capitalize">{title}</p>
         <p>{themeModeToggleButton}</p>
       </div>
       <div className="flex w-full">
