@@ -1,0 +1,72 @@
+{
+  "data": [
+    {
+      "header": {
+        "title": "dashboard",
+        "subtitle": "Welcome back! Here's what's happening today."
+      }
+    },
+    {
+      "body": {
+        "cards": [
+          {
+            "id": "total_members",
+            "title": "total members",
+            "members": 1234,
+            "icon": "Users",
+            "iconColor": "purple",
+            "footerMessage": "+12% from last month"
+          },
+          {
+            "id": "todays_visits",
+            "title": "today's visits",
+            "visitors": 123,
+            "icon": "CalendarCheck",
+            "iconColor": "green",
+            "footerMessage": "+12% from last month"
+          },
+          {
+            "id": "active_plans",
+            "title": "active plans",
+            "plans": 6,
+            "icon": "Activity",
+            "iconColor": "purple",
+            "footerMessage": "+12% from last month"
+          },
+          {
+            "id": "revenue",
+            "title": "revenue",
+            "revenue_money": 75,
+            "icon": "TrendingUp",
+            "iconColor": "orange",
+            "footerMessage": "+12% from last month"
+          }
+        ],
+        "recent_activity": {
+          "users": [
+            {
+              "username": "stelios",
+              "activity": "Completed workout",
+              "when": "2004-05-21"
+            },
+            {
+              "username": "Jane Smith",
+              "activity": "Joined Premium Plan",
+              "when": "2004-05-21"
+            },
+            {
+              "username": "Mike Johnson",
+              "activity": "Checked in",
+              "when": "2004-05-21"
+            },
+            {
+              "username": "Sarah Williams",
+              "activity": "Updated profile",
+              "when": "2004-05-21"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

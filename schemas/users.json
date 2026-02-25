@@ -1,0 +1,36 @@
+{
+  "data": [
+    {
+      "header": {
+        "title": "users management",
+        "subtitle": "Manage gym members and their profiles."
+      }
+    },
+    {
+      "body": {
+        "users": [
+          {
+            "username": "stelios",
+            "activity": "Completed workout",
+            "when": "2004-05-21"
+          },
+          {
+            "username": "Jane Smith",
+            "activity": "Joined Premium Plan",
+            "when": "2004-05-21"
+          },
+          {
+            "username": "Mike Johnson",
+            "activity": "Checked in",
+            "when": "2004-05-21"
+          },
+          {
+            "username": "Sarah Williams",
+            "activity": "Updated profile",
+            "when": "2004-05-21"
+          }
+        ]
+      }
+    }
+  ]
+}
