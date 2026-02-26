@@ -1,6 +1,7 @@
 import type { BodyType, CardType } from "@/@types/dashboard";
 import { QuickInfoCard } from "@/components/cards/dashboard/quick-info-card";
 import { QuickInfoContainer } from "@/components/containers/dashboard/quick-info-container";
+import DemoPage from "@/payments/page";
 import { useOutletContext } from "react-router-dom";
 
 export function Dashboard() {
@@ -9,17 +10,21 @@ export function Dashboard() {
   const cards: CardType = dashboardContext.cards;
 
   return (
-    <QuickInfoContainer>
-      {cards.map((d) => (
-        <QuickInfoCard
-          key={d.id}
-          title={d.title}
-          bodyMessage={d.value}
-          icon={d.icon}
-          iconColor={d.iconColor}
-          footerMessage={d.footerMessage}
-        />
-      ))}
-    </QuickInfoContainer>
+    <div>
+      <QuickInfoContainer>
+        {cards.map((d) => (
+          <QuickInfoCard
+            key={d.id}
+            title={d.title}
+            bodyMessage={d.value}
+            icon={d.icon}
+            iconColor={d.iconColor}
+            footerMessage={d.footerMessage}
+          />
+        ))}
+      </QuickInfoContainer>
+
+      <DemoPage />
+    </div>
   );
 }
