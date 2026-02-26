@@ -12,11 +12,11 @@ export function HeaderCard({
   return (
     <div className="flex flex-col w-full h-full justify-center px-8">
       <div className="flex justify-between">
-        <p className="capitalize">{title}</p>
-        <p>{themeModeToggleButton}</p>
+        <p className="capitalize text-3xl font-semibold">{title}</p>
+        <span>{themeModeToggleButton}</span>
       </div>
       <div className="flex w-full">
-        <p>{subtitle}</p>
+        <p className="text-sm font-light">{subtitle}</p>
       </div>
     </div>
   );
