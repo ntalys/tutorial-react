@@ -8,14 +8,9 @@ import type {
   ColumnFiltersState,
   VisibilityState,
 } from "@tanstack/react-table";
-// import type { SortingState } from "@tanstack/react-table";
 
 import {
-  //   ColumnDef,
-  //   SortingState,
-  //   ColumnFiltersState,
   flexRender,
-  //   VisibilityState,
   getCoreRowModel,
   getFilteredRowModel,
   getPaginationRowModel,
