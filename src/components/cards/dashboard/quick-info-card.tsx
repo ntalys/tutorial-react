@@ -7,12 +7,13 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
+import * as Icons from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 type QuickInfoCardType = {
   title: string;
   bodyMessage: string | number;
-  icon: LucideIcon;
+  icon: string;
   iconColor: React.CSSProperties["color"];
   footerMessage: string;
 };
@@ -20,15 +21,18 @@ type QuickInfoCardType = {
 export function QuickInfoCard({
   title,
   bodyMessage,
-  icon: Icon,
+  icon,
   iconColor,
   footerMessage,
 }: QuickInfoCardType) {
+  const iconMap: Record<string, LucideIcon> = Icons;
+  const Icon = iconMap[icon];
+
   return (
     <Card className="flex mx-auto w-full max-w-xs hover:bg-gray-100 hover:dark:bg-stone-900 cursor-pointer">
       <CardHeader>
         <CardAction className="mt-5">
-          <Icon className="h-6 w-6" color={iconColor} />
+          {Icon && <Icon className="w-5 h-5" color={iconColor} />}
         </CardAction>
         <CardTitle className="font-light capitalize">{title}</CardTitle>
         <CardDescription className="font-semibold text-2xl text-primary">
