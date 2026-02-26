@@ -12,7 +12,18 @@ import { NavHeaderCard } from "@/components/cards/nav-header-card";
 import { NavFooterCard } from "@/components/cards/nav-footer-card";
 import { NavBodyCard } from "@/components/cards/nav-body-card";
 
+import dashboard from "../../../schemas/dashboard.json";
+
+import type { HeaderType } from "@/@types/dashboard";
+
 export function DashboardLayout() {
+  const header: HeaderType = Object.assign(
+    {},
+    ...dashboard.data.map((d) => d.header),
+  );
+
+  const body = Object.assign({}, ...dashboard.data.map((d) => d.body));
+
   return (
     <MainContainer>
       <NavContainer
@@ -34,13 +45,13 @@ export function DashboardLayout() {
       />
       <HeaderContainer>
         <HeaderCard
-          title="title"
-          subtitle="subtitle"
+          title={header.title}
+          subtitle={header.subtitle}
           themeModeToggleButton={<ThemeModeToggle />}
         />
       </HeaderContainer>
       <BodyContainer>
-        <Outlet />
+        <Outlet context={body} />
       </BodyContainer>
     </MainContainer>
   );
