@@ -1,7 +1,8 @@
 import type { BodyType, CardType } from "@/@types/dashboard";
 import { QuickInfoCard } from "@/components/cards/dashboard/quick-info-card";
+import { BaseContainer } from "@/components/containers/dashboard/base-container";
 import { QuickInfoContainer } from "@/components/containers/dashboard/quick-info-container";
-import DemoPage from "@/payments/page";
+import DemoPage from "@/components/table/page";
 import { useOutletContext } from "react-router-dom";
 
 export function Dashboard() {
@@ -10,7 +11,7 @@ export function Dashboard() {
   const cards: CardType = dashboardContext.cards;
 
   return (
-    <div>
+    <div className="flex flex-col">
       <QuickInfoContainer>
         {cards.map((d) => (
           <QuickInfoCard
@@ -23,8 +24,9 @@ export function Dashboard() {
           />
         ))}
       </QuickInfoContainer>
-
-      <DemoPage />
+      <BaseContainer>
+        <DemoPage />
+      </BaseContainer>
     </div>
   );
 }
