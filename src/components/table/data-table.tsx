@@ -35,6 +35,22 @@ import {
   DropdownMenuContent,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import {
+  ChevronLeft,
+  ChevronRight,
+  ChevronsLeft,
+  ChevronsRight,
+} from "lucide-react";
+
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "../ui/select";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -73,7 +89,7 @@ export function DataTable<TData, TValue>({
   });
 
   return (
-    <div className="w-full rounded-xl p-3">
+    <div className="w-full rounded-xl">
       <div className="flex items-center mb-3">
         <Input
           placeholder="Filter username..."
@@ -159,26 +175,54 @@ export function DataTable<TData, TValue>({
           </TableBody>
         </Table>
       </div>
-      <div className="flex items-center justify-between space-x-2 py-4">
+      <div className="flex items-center justify-center space-x-2 py-4">
         <div className="text-muted-foreground flex-1 text-sm">
           {table.getFilteredSelectedRowModel().rows.length} of{" "}
           {table.getFilteredRowModel().rows.length} row(s) selected.
         </div>
-        <div className="flex gap-3">
+        <div className="flex flex-1 justify-center gap-3">
           <Button
-            variant="outline"
-            size="sm"
+            onClick={() => table.firstPage()}
+            disabled={!table.getCanPreviousPage()}>
+            <ChevronsLeft />
+          </Button>
+          <Button
             onClick={() => table.previousPage()}
             disabled={!table.getCanPreviousPage()}>
-            Previous
+            <ChevronLeft />
           </Button>
           <Button
-            variant="outline"
-            size="sm"
             onClick={() => table.nextPage()}
             disabled={!table.getCanNextPage()}>
-            Next
+            <ChevronRight />
           </Button>
+          <Button
+            onClick={() => table.lastPage()}
+            disabled={!table.getCanNextPage()}>
+            <ChevronsRight />
+          </Button>
+        </div>
+        <div className="flex flex-1 justify-end">
+          <Select
+            value={String(table.getState().pagination.pageSize)}
+            onValueChange={(e) => {
+              table.setPageSize(Number(e));
+            }}>
+            <SelectTrigger className="w-full max-w-20">
+              <SelectValue placeholder="Select table pagination" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectGroup>
+                <SelectLabel>Pagination</SelectLabel>
+
+                {[5, 10, 20, 30, 40, 50].map((pageSize) => (
+                  <SelectItem key={pageSize} value={String(pageSize)}>
+                    {pageSize}
+                  </SelectItem>
+                ))}
+              </SelectGroup>
+            </SelectContent>
+          </Select>
         </div>
       </div>
     </div>
