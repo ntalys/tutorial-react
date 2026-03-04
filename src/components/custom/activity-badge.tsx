@@ -7,7 +7,7 @@ import {
   Dumbbell,
 } from "lucide-react";
 
-type ActivityType =
+export type ActivityType =
   | "Updated profile"
   | "Logged in"
   | "Changed password"
