@@ -2,6 +2,7 @@ import { MouseEvent, useState } from "react";
 import { useAuth } from "@/lib/auth-util";
 import { useNavigate, useLocation } from "react-router-dom";
 import { decode } from "js-base64";
+import { LogIn } from "lucide-react";
 
 const loginData = {
   email: "admin@example.com",
@@ -88,9 +89,10 @@ export function SignIn() {
             <div>
               <button
                 type="submit"
-                className="flex w-full justify-center rounded-md bg-accent-6 px-3 py-1.5 text-sm font-semibold leading-6 shadow-sm hover:bg-accent-6 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-6 cursor-pointer"
+                className="flex w-full justify-center items-center rounded-md bg-accent-6 px-3 py-1.5 text-sm font-semibold leading-6 shadow-sm hover:bg-accent-6 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-6 cursor-pointer bg-[#ffe138] gap-3"
                 onClick={login}>
                 Sign in
+                <LogIn className="h-5 w-5" />
               </button>
             </div>
           </form>
