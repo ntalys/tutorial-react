@@ -16,7 +16,7 @@ export function NavLinkCard({ title, icon: Icon, to }: NavLinkPropsType) {
         flex items-center gap-2 w-full rounded-md px-3 py-2 transition-colors
         ${
           isActive
-            ? "bg-yellow-500 text-black font-medium"
+            ? "bg-[#ffe138] text-black font-medium"
             : "text-muted-foreground hover:bg-muted"
         }
         `

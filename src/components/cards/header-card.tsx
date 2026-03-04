@@ -16,7 +16,7 @@ export function HeaderCard({
         <span>{themeModeToggleButton}</span>
       </div>
       <div className="flex w-full">
-        <p className="text-sm font-light">{subtitle}</p>
+        <p className="text-sm font-light text-gray-400">{subtitle}</p>
       </div>
     </div>
   );
