@@ -17,6 +17,7 @@ import {
 import { Checkbox } from "@/components/ui/checkbox";
 import type { UserType } from "@/@types/dashboard";
 import { ActivityBadge, type ActivityType } from "../custom/activity-badge";
+import { UserInitialBadge } from "../custom/user-initial-badge";
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
@@ -60,6 +61,14 @@ export const columns: ColumnDef<UserType>[] = [
           Username
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
+      );
+    },
+    cell: ({ row }) => {
+      return (
+        <div className="flex items-center gap-3">
+          <UserInitialBadge username={row.original.username} />
+          <p>{row.original.username}</p>
+        </div>
       );
     },
   },
