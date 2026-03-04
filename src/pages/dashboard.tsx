@@ -10,6 +10,8 @@ export function Dashboard() {
 
   const cards: CardType = dashboardContext.cards;
 
+  const { users } = dashboardContext.recent_activity;
+
   return (
     <div className="flex flex-col">
       <QuickInfoContainer>
@@ -25,7 +27,7 @@ export function Dashboard() {
         ))}
       </QuickInfoContainer>
       <BaseContainer>
-        <DemoPage />
+        <DemoPage users={users} />
       </BaseContainer>
     </div>
   );
