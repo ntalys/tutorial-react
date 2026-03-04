@@ -16,6 +16,7 @@ import {
 
 import { Checkbox } from "@/components/ui/checkbox";
 import type { UserType } from "@/@types/dashboard";
+import { ActivityBadge, type ActivityType } from "../custom/activity-badge";
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
@@ -66,6 +67,9 @@ export const columns: ColumnDef<UserType>[] = [
     accessorKey: "activity",
     header: () => {
       return <Button variant="ghost">Activity</Button>;
+    },
+    cell: ({ row }) => {
+      return <ActivityBadge activity={row.original.activity as ActivityType} />;
     },
   },
   {
