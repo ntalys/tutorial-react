@@ -38,7 +38,7 @@
             "title": "revenue",
             "value": 75,
             "icon": "TrendingUp",
-            "iconColor": "orange",
+            "iconColor": "#ffe138",
             "footerMessage": "+12% from last month"
           }
         ],
