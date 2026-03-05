@@ -89,7 +89,7 @@ export function SignIn() {
             <div>
               <button
                 type="submit"
-                className="flex w-full justify-center items-center rounded-md bg-accent-6 px-3 py-1.5 text-sm font-semibold leading-6 shadow-sm hover:bg-accent-6 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-6 cursor-pointer bg-[#ffe138] gap-3"
+                className="flex w-full justify-center items-center rounded-md bg-accent-6 px-3 py-1.5 text-sm font-semibold leading-6 shadow-sm hover:bg-accent-6 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-6 cursor-pointer bg-[#ffe138] gap-3 text-black"
                 onClick={login}>
                 Sign in
                 <LogIn className="h-5 w-5" />
