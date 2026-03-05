@@ -183,22 +183,26 @@ export function DataTable<TData, TValue>({
         <div className="flex flex-1 justify-center gap-3">
           <Button
             onClick={() => table.firstPage()}
-            disabled={!table.getCanPreviousPage()}>
+            disabled={!table.getCanPreviousPage()}
+            className="disabled:cursor-not-allowed disabled:pointer-events-auto cursor-pointer">
             <ChevronsLeft />
           </Button>
           <Button
             onClick={() => table.previousPage()}
-            disabled={!table.getCanPreviousPage()}>
+            disabled={!table.getCanPreviousPage()}
+            className="disabled:cursor-not-allowed disabled:pointer-events-auto cursor-pointer">
             <ChevronLeft />
           </Button>
           <Button
             onClick={() => table.nextPage()}
-            disabled={!table.getCanNextPage()}>
+            disabled={!table.getCanNextPage()}
+            className="disabled:cursor-not-allowed disabled:pointer-events-auto cursor-pointer">
             <ChevronRight />
           </Button>
           <Button
             onClick={() => table.lastPage()}
-            disabled={!table.getCanNextPage()}>
+            disabled={!table.getCanNextPage()}
+            className="disabled:cursor-not-allowed disabled:pointer-events-auto cursor-pointer">
             <ChevronsRight />
           </Button>
         </div>
