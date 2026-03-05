@@ -11,6 +11,7 @@ export type UserType = {
   lname: string;
   phone: string;
   uname: string;
+  status: "active" | "inactive";
 };
 
 export type BodyType = {
