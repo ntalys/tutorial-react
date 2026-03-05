@@ -22,27 +22,31 @@ type Props = {
 const activityMap = {
   "Updated profile": {
     icon: UserCog,
-    className: "bg-blue-100 text-blue-700",
+    className: "dark:bg-blue-100 dark:text-blue-700 bg-blue-800 text-blue-100",
   },
   "Logged in": {
     icon: LogIn,
-    className: "bg-green-100 text-green-700",
+    className:
+      "dark:bg-green-100 dark:text-green-700 bg-green-800 text-green-100",
   },
   "Changed password": {
     icon: KeyRound,
-    className: "bg-red-100 text-red-700",
+    className: "dark:bg-red-100 dark:text-red-700 bg-red-800 text-red-100",
   },
   "Uploaded photo": {
     icon: ImageUp,
-    className: "bg-purple-100 text-purple-700",
+    className:
+      "dark:bg-purple-100 dark:text-purple-700 bg-purple-800 text-purple-100",
   },
   "Joined Premium Plan": {
     icon: Crown,
-    className: "bg-yellow-100 text-yellow-700",
+    className:
+      "dark:bg-yellow-100 dark:text-yellow-700 bg-yellow-800 text-yellow-100",
   },
   "Completed workout": {
     icon: Dumbbell,
-    className: "bg-orange-100 text-orange-700",
+    className:
+      "dark:bg-orange-100 dark:text-orange-700 bg-orange-800 text-orange-100",
   },
 };
 
