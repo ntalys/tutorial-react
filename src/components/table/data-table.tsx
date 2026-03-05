@@ -90,7 +90,7 @@ export function DataTable<TData, TValue>({
 
   return (
     <div className="w-full rounded-xl">
-      <div className="flex items-center mb-3 z-10 sticky top-0 bg-background py-3">
+      <div className="flex items-center mb-3 z-10 sticky top-0 bg-card py-3">
         <Input
           placeholder="Filter username..."
           value={
