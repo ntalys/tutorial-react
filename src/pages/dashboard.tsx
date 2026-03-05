@@ -2,7 +2,7 @@ import type { BodyType, CardType } from "@/@types/dashboard";
 import { QuickInfoCard } from "@/components/cards/dashboard/quick-info-card";
 import { BaseContainer } from "@/components/containers/dashboard/base-container";
 import { QuickInfoContainer } from "@/components/containers/dashboard/quick-info-container";
-import DemoPage from "@/components/table/page";
+import RecentActivityTable from "@/components/table/recent-activity/recent-activity-table";
 import { useOutletContext } from "react-router-dom";
 
 export function Dashboard() {
@@ -27,7 +27,7 @@ export function Dashboard() {
         ))}
       </QuickInfoContainer>
       <BaseContainer>
-        <DemoPage users={users} />
+        <RecentActivityTable users={users} />
       </BaseContainer>
     </div>
   );
