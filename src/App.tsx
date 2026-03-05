@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { DashboardLayout } from "@/components/layouts/dashboard-layout";
 import { Dashboard } from "@/pages/dashboard";
 import { Users } from "@/pages/users";
-import { Calendar } from "@/pages/calendar";
+import { CalendarPage } from "@/pages/calendar-page";
 import { Newsletter } from "@/pages/newsletter";
 import { GymPlans } from "@/pages/gym-plans";
 import { SignInLayout } from "./components/layouts/sign-in-layout";
@@ -21,7 +21,7 @@ function App() {
           <Route element={<DashboardLayout />}>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/users" element={<Users />} />
-            <Route path="/calendar" element={<Calendar />} />
+            <Route path="/calendar" element={<CalendarPage />} />
             <Route path="/gym-plans" element={<GymPlans />} />
             <Route path="/newsletter" element={<Newsletter />} />
           </Route>
