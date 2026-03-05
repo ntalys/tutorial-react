@@ -20,7 +20,7 @@ import {
   ActivityBadge,
   type ActivityType,
 } from "@/components/custom/badge/activity-badge";
-import { UserInitialBadge } from "../custom/badge/user-initial-badge";
+import { UserInitialBadge } from "@/components/custom/badge/user-initial-badge";
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
