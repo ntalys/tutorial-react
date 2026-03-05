@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import { NavContainer } from "@/components/containers/nav-container";
 import { MainContainer } from "@/components/containers/main-container";
 import { HeaderContainer } from "@/components/containers/header-container";
@@ -13,16 +13,26 @@ import { NavFooterCard } from "@/components/cards/nav-footer-card";
 import { NavBodyCard } from "@/components/cards/nav-body-card";
 
 import dashboard from "../../../schemas/dashboard.json";
+import users from "../../../schemas/users.json";
 
-import type { HeaderType } from "@/@types/dashboard";
+import type { HeaderType } from "@/@types/dashboard-header";
 
 export function DashboardLayout() {
-  const header: HeaderType = Object.assign(
-    {},
-    ...dashboard.data.map((d) => d.header),
-  );
+  const routeSchemas: Record<string, { header: HeaderType; body: any }> = {
+    "/dashboard": {
+      header: Object.assign({}, ...dashboard.data.map((d) => d.header)),
+      body: Object.assign({}, ...dashboard.data.map((d) => d.body)),
+    },
+    "/users": {
+      header: Object.assign({}, ...users.data.map((d) => d.header)),
+      body: Object.assign({}, ...users.data.map((d) => d.body)),
+    },
+    // add more routes here
+  };
 
-  const body = Object.assign({}, ...dashboard.data.map((d) => d.body));
+  const location = useLocation();
+  const routeData =
+    routeSchemas[location.pathname] ?? routeSchemas["/dashboard"];
 
   return (
     <MainContainer>
@@ -45,13 +55,13 @@ export function DashboardLayout() {
       />
       <HeaderContainer>
         <HeaderCard
-          title={header.title}
-          subtitle={header.subtitle}
+          title={routeData.header.title}
+          subtitle={routeData.header.subtitle}
           themeModeToggleButton={<ThemeModeToggle />}
         />
       </HeaderContainer>
       <BodyContainer>
-        <Outlet context={body} />
+        <Outlet context={routeData.body} />
       </BodyContainer>
     </MainContainer>
   );
