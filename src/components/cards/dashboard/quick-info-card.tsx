@@ -31,8 +31,8 @@ export function QuickInfoCard({
   return (
     <Card className="flex mx-auto w-full max-w-xs hover:bg-gray-100 hover:dark:bg-stone-900 cursor-pointer">
       <CardHeader>
-        <CardAction className="mt-5">
-          {Icon && <Icon className="w-5 h-5" color={iconColor} />}
+        <CardAction className="w-full h-full flex justify-between items-center flex-1">
+          {Icon && <Icon className="w-6 h-6" color={iconColor} />}
         </CardAction>
         <CardTitle className="font-light capitalize">{title}</CardTitle>
         <CardDescription className="font-semibold text-2xl text-primary">

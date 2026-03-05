@@ -3,9 +3,5 @@ export function NavFooterContainer({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <div className="flex h-full w-full items-center  bg-purple-500">
-      {children}
-    </div>
-  );
+  return <div className="flex h-full w-full items-center">{children}</div>;
 }

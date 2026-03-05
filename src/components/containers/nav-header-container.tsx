@@ -4,8 +4,6 @@ export function NavHeaderContainer({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex h-full w-full items-center  bg-green-500">
-      {children}
-    </div>
+    <div className="flex h-full w-full items-center border-b-2">{children}</div>
   );
 }

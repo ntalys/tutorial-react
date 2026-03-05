@@ -1,6 +1,8 @@
 import type { BodyType, CardType } from "@/@types/dashboard";
 import { QuickInfoCard } from "@/components/cards/dashboard/quick-info-card";
+import { BaseContainer } from "@/components/containers/dashboard/base-container";
 import { QuickInfoContainer } from "@/components/containers/dashboard/quick-info-container";
+import RecentActivityTable from "@/components/table/recent-activity/recent-activity-table";
 import { useOutletContext } from "react-router-dom";
 
 export function Dashboard() {
@@ -8,18 +10,25 @@ export function Dashboard() {
 
   const cards: CardType = dashboardContext.cards;
 
+  const { users } = dashboardContext.recent_activity;
+
   return (
-    <QuickInfoContainer>
-      {cards.map((d) => (
-        <QuickInfoCard
-          key={d.id}
-          title={d.title}
-          bodyMessage={d.value}
-          icon={d.icon}
-          iconColor={d.iconColor}
-          footerMessage={d.footerMessage}
-        />
-      ))}
-    </QuickInfoContainer>
+    <div className="flex flex-col">
+      <QuickInfoContainer>
+        {cards.map((d) => (
+          <QuickInfoCard
+            key={d.id}
+            title={d.title}
+            bodyMessage={d.value}
+            icon={d.icon}
+            iconColor={d.iconColor}
+            footerMessage={d.footerMessage}
+          />
+        ))}
+      </QuickInfoContainer>
+      <BaseContainer>
+        <RecentActivityTable users={users} />
+      </BaseContainer>
+    </div>
   );
 }

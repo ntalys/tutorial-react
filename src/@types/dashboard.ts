@@ -1,10 +1,5 @@
 import type { LucideIcon } from "lucide-react";
 
-export type HeaderType = {
-  title: string;
-  subtitle: string;
-};
-
 export type CardType = {
   id: string;
   title: string;
