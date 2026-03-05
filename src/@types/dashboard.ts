@@ -1,4 +1,5 @@
 import type { LucideIcon } from "lucide-react";
+import type { UserType } from "@/@types/users";
 
 export type CardType = {
   id: string;
@@ -9,14 +10,8 @@ export type CardType = {
   footerMessage: string;
 }[];
 
-export type UserType = {
-  username: string;
-  activity: string;
-  when: string;
-};
-
 export type RecentActivityType = {
-  users: UserType[];
+  users: Pick<UserType, "username" | "activity" | "when" | "id">[];
 };
 
 export type BodyType = {
