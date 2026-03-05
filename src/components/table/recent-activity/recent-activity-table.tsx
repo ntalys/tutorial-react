@@ -1,4 +1,4 @@
-import type { UserType } from "@/@types/dashboard";
+import type { RecentActivityType } from "@/@types/dashboard";
 import { columns } from "./columns";
 import { DataTable } from "@/components/table/data-table";
 import { TableContainer } from "@/components/containers/table/table-container";
@@ -8,15 +8,15 @@ import { TableContainer } from "@/components/containers/table/table-container";
 // }
 
 export default async function RecentActivityTable({
-  users,
+  data,
 }: {
-  users: UserType[];
+  data: RecentActivityType;
 }) {
   // const data = await getData();
 
   return (
     <TableContainer headerTitle="recent activity">
-      <DataTable columns={columns} data={users} />
+      <DataTable columns={columns} data={data.users} />
     </TableContainer>
   );
 }
