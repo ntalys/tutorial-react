@@ -86,8 +86,15 @@ export const columns: ColumnDef<UserType>[] = [
   },
   {
     accessorKey: "when",
-    header: () => {
-      return <Button variant="ghost"></Button>;
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}>
+          Time
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      );
     },
   },
   // {
