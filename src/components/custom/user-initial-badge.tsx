@@ -3,11 +3,11 @@ type Props = {
 };
 
 const colors = [
-  "bg-blue-200 text-blue-800",
-  "bg-green-200 text-green-800",
-  "bg-purple-200 text-purple-800",
-  "bg-pink-200 text-pink-800",
-  "bg-yellow-200 text-yellow-800",
+  "text-blue-800 dark:text-blue-300",
+  "text-green-800 dark:text-green-300",
+  "text-purple-800 dark:text-purple-300",
+  "text-pink-800 dark:text-pink-300",
+  "text-yellow-800 dark:text-yellow-300",
 ];
 
 function getColor(name: string) {
@@ -28,7 +28,7 @@ export function UserInitialBadge({ username }: Props) {
 
   return (
     <div
-      className={`inline-flex h-8 w-8 items-center justify-center rounded-full font-semibold ${color}`}>
+      className={`inline-flex items-center justify-center font-semibold ${color}`}>
       {initials || "?"}
     </div>
   );
