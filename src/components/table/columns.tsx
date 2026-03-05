@@ -16,8 +16,11 @@ import {
 
 import { Checkbox } from "@/components/ui/checkbox";
 import type { UserType } from "@/@types/dashboard";
-import { ActivityBadge, type ActivityType } from "../custom/activity-badge";
-import { UserInitialBadge } from "../custom/user-initial-badge";
+import {
+  ActivityBadge,
+  type ActivityType,
+} from "@/components/custom/badge/activity-badge";
+import { UserInitialBadge } from "../custom/badge/user-initial-badge";
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
