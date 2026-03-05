@@ -1,6 +1,6 @@
 import type { UserType } from "@/@types/dashboard";
 import { columns } from "./columns";
-import { DataTable } from "./data-table";
+import { DataTable } from "@/components/table/data-table";
 import { TableContainer } from "@/components/containers/table/table-container";
 
 // async function getData(): Promise<UserType[]> {
@@ -15,7 +15,7 @@ export default async function RecentActivityTable({
   // const data = await getData();
 
   return (
-    <TableContainer>
+    <TableContainer headerTitle="recent activity">
       <DataTable columns={columns} data={users} />
     </TableContainer>
   );
