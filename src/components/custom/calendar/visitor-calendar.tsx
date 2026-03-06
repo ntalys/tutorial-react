@@ -67,6 +67,20 @@ export function VisitorCalendar() {
           head_cell: "text-muted-foreground text-sm text-center",
           dropdowns: "flex justify-center gap-2 w-full mt-3",
         }}
+        modifiers={{
+          booked: bookedDates,
+        }}
+        modifiersClassNames={{
+          today: "bg-transparent",
+          booked:
+            "dark:bg-red-300 dark:text-red-700 bg-red-800 text-red-100 cursor-not-allowed",
+          disabled: "[&>button]:line-through opacity-40 text-red-500",
+        }}
+        formatters={{
+          formatMonthDropdown: (date) => {
+            return date.toLocaleString("default", { month: "long" });
+          },
+        }}
         components={{
           DayButton: ({ day, ...props }) => {
             const visitCount = getVisits(day.date);
@@ -75,8 +89,8 @@ export function VisitorCalendar() {
             return (
               <div className="flex-1 w-full h-full flex justify-center items-center">
                 <Button
-                {...props}
-                onClick={() => setSelectedDay(day.date)}
+                  {...props}
+                  onClick={() => setSelectedDay(day.date)}
                   className={`relative w-[100px] h-[100px] flex flex-col items-start 
                   justify-center p-2 rounded-lg border 
                   transition
@@ -91,14 +105,14 @@ export function VisitorCalendar() {
                       ? "bg-gray-400/30 text-white w-6 h-6 rounded-full flex justify-center items-center"
                       : ""
                   }`}>
-                  {day.date.getDate()}
-                </span>
-
-                {visitCount > 0 && (
-                  <span className="flex flex-1 w-full justify-end items-end text-xs mt-1">
-                    {visitCount} visits
+                    {day.date.getDate()}
                   </span>
-                )}
+
+                  {visitCount > 0 && (
+                    <span className="flex flex-1 w-full justify-end items-end text-xs mt-1">
+                      {visitCount} visits
+                    </span>
+                  )}
                 </Button>
               </div>
             );
