@@ -1,3 +1,4 @@
+import { BaseContainer } from "@/components/containers/dashboard/base-container";
 import { TableContainer } from "@/components/containers/table/table-container";
 import { VisitorCalendar } from "@/components/custom/calendar/visitor-calendar";
 import { useState } from "react";
@@ -14,8 +15,10 @@ export function CalendarPage() {
   });
 
   return (
-    <TableContainer headerTitle={formattedDate}>
-      <VisitorCalendar />
-    </TableContainer>
+    <BaseContainer>
+      <TableContainer headerTitle={formattedDate}>
+        <VisitorCalendar />
+      </TableContainer>
+    </BaseContainer>
   );
 }
