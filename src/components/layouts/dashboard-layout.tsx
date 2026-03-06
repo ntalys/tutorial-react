@@ -14,6 +14,7 @@ import { NavBodyCard } from "@/components/cards/nav-body-card";
 
 import dashboard from "../../../schemas/dashboard.json";
 import users from "../../../schemas/users.json";
+import calendar from "../../../schemas/calendar.json";
 
 import type { HeaderType } from "@/@types/dashboard-header";
 
@@ -26,6 +27,10 @@ export function DashboardLayout() {
     "/users": {
       header: Object.assign({}, ...users.data.map((d) => d.header)),
       body: Object.assign({}, ...users.data.map((d) => d.body)),
+    },
+    "/calendar": {
+      header: Object.assign({}, ...calendar.data.map((d) => d.header)),
+      body: Object.assign({}, ...calendar.data.map((d) => d.body)),
     },
     // add more routes here
   };
