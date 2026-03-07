@@ -65,8 +65,8 @@ export function VisitorCalendar() {
           head_row: "grid grid-cols-7",
           cell: "h-24",
           head_cell: "text-muted-foreground text-sm text-center",
-          dropdowns: "flex justify-start gap-2 w-full mt-5 -ml-14",
-          nav: "relative -top-10 left-170",
+          dropdowns: "flex w-full -ml-14 justify-start gap-2",
+          nav: "absolute top-0 right-0",
         }}
         modifiers={{
           booked: bookedDates,
