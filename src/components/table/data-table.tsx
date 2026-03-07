@@ -1,5 +1,3 @@
-// "use client";
-
 import { useState } from "react";
 
 import type {
@@ -90,7 +88,7 @@ export function DataTable<TData, TValue>({
 
   return (
     <div className="w-full rounded-xl">
-      <div className="flex items-center mb-3 z-10 sticky top-0 bg-card py-3">
+      <div className="flex items-center mb-3 bg-card py-3">
         <Input
           placeholder="Filter username..."
           value={
@@ -127,11 +125,13 @@ export function DataTable<TData, TValue>({
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
-      <div className="max-w-[80vw] scrollbar-thin overflow-x-scroll rounded-md border">
+      <div className="max-w-[80vw] min-h-[60vh] max-h-[60vh] overflow-auto scrollbar-thin rounded-md border">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow key={headerGroup.id}>
+              <TableRow
+                key={headerGroup.id}
+                className="dark:bg-background bg-secondary">
                 {headerGroup.headers.map((header) => {
                   return (
                     <TableHead key={header.id}>
