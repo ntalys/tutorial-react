@@ -57,7 +57,7 @@ export function VisitorCalendar() {
         onMonthChange={setMonth}
         captionLayout="dropdown"
         showOutsideDays={false}
-        disabled={(date) => isWeekend(date)}
+        navLayout="after"
         className="w-full rounded-xl border"
         classNames={{
           table: "w-full bg-purple-500 border-collapse",
@@ -65,7 +65,8 @@ export function VisitorCalendar() {
           head_row: "grid grid-cols-7",
           cell: "h-24",
           head_cell: "text-muted-foreground text-sm text-center",
-          dropdowns: "flex justify-center gap-2 w-full mt-3",
+          dropdowns: "flex justify-start gap-2 w-full mt-5",
+          nav: "relative -top-10 flex flex-row justify-end",
         }}
         modifiers={{
           booked: bookedDates,
