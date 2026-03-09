@@ -38,6 +38,7 @@ import {
   ChevronRight,
   ChevronsLeft,
   ChevronsRight,
+  Columns3,
 } from "lucide-react";
 
 import {
@@ -101,7 +102,8 @@ export function DataTable<TData, TValue>({
         />
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="ml-auto">
+            <Button variant="outline" className="ml-auto cursor-pointer">
+              <Columns3 />
               Columns
             </Button>
           </DropdownMenuTrigger>
